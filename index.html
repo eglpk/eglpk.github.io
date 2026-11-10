@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EAglE Gaming Zone | COD4 Promod Server</title>
+<meta name="description" content="EAglE Gaming Zone: Call of Duty 4 Promod servers (SnD and TDM).">
+<style>
+:root{--bg:#0d0f14;--card:#171a22;--line:#262b38;--text:#e8eaf0;--muted:#9aa3b5;--red:#e03131;--red2:#ff6b6b}
+@media (prefers-color-scheme: light){:root{--bg:#f4f5f8;--card:#fff;--line:#dde1ea;--text:#161922;--muted:#5b6475;--red:#d62828;--red2:#b91c1c}}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+.wrap{max-width:960px;margin:0 auto;padding:0 20px}
+header{padding:64px 0 40px;text-align:center;border-bottom:1px solid var(--line)}
+.logo{font-size:clamp(40px,9vw,72px);font-weight:800;letter-spacing:2px;margin:0}
+.logo span{color:var(--red)}
+.tag{color:var(--muted);margin:8px 0 24px;font-size:18px}
+.btn{display:inline-block;background:var(--red);color:#fff;text-decoration:none;padding:12px 22px;border-radius:8px;font-weight:700;border:0;cursor:pointer;font-size:15px}
+.btn:hover{background:var(--red2)}
+.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
+section{padding:40px 0;border-bottom:1px solid var(--line)}
+h2{margin:0 0 20px;font-size:26px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px}
+.card h3{margin:0 0 6px}
+.muted{color:var(--muted)}
+code{background:var(--bg);border:1px solid var(--line);padding:3px 8px;border-radius:6px;font-size:14px;word-break:break-all}
+ol,ul{padding-left:20px;margin:0}
+li{margin:6px 0}
+.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px;align-items:center}
+footer{text-align:center;padding:32px 0;color:var(--muted);font-size:14px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1 class="logo">EA<span>gl</span>E</h1>
+    <p class="tag">Gaming Zone &middot; Call of Duty 4 Promod</p>
+    <a class="btn" href="#servers">Join a Server</a>
+    <a class="btn ghost" href="#contact">Contact Us</a>
+  </div>
+</header>
+
+<section id="servers">
+  <div class="wrap">
+    <h2>Our Servers</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>EAglE Promod SnD</h3>
+        <p class="muted">Search &amp; Destroy, competitive Promod rules.</p>
+        <div class="row">
+          <code id="snd">connect SERVER_ADDRESS:28960</code>
+          <button class="btn ghost" onclick="copyText('snd',this)">Copy</button>
+        </div>
+      </div>
+      <div class="card">
+        <h3>EAglE Promod TDM</h3>
+        <p class="muted">Team Deathmatch, fast and fun.</p>
+        <div class="row">
+          <code id="tdm">connect SERVER_ADDRESS:28961</code>
+          <button class="btn ghost" onclick="copyText('tdm',this)">Copy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>How to Join</h2>
+    <ol>
+      <li>Open Call of Duty 4 and press <code>~</code> to open the console.</li>
+      <li>Paste the connect line from above and press Enter.</li>
+      <li>Wait for the mod to download, then pick your team and play.</li>
+    </ol>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>Server Rules</h2>
+    <ul>
+      <li>No cheating, hacking or exploiting bugs.</li>
+      <li>Respect all players. No abuse or hate speech.</li>
+      <li>Follow admin instructions.</li>
+      <li>Team play wins rounds. Have fun!</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:0">
+  <div class="wrap">
+    <h2>Contact &amp; Community</h2>
+    <div class="row">
+      <a class="btn" href="DISCORD_LINK" target="_blank" rel="noopener">Discord</a>
+      <a class="btn ghost" href="FACEBOOK_LINK" target="_blank" rel="noopener">Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">&copy; 2026 EAglE Gaming Zone &middot; Promod base by the original Promod developers</div>
+</footer>
+
+<script>
+function copyText(id,btn){
+  var t=document.getElementById(id).textContent;
+  function done(){var o=btn.textContent;btn.textContent="Copied";setTimeout(function(){btn.textContent=o},1500)}
+  if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,function(){})}
+}
+</script>
+</body>
+</html>
